@@ -1,12 +1,13 @@
 import styles from "./LoginForm.module.css";
-
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
 
 const LoginForm = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [sessionData, setSessionData] = useState(null);
+
+    const navigate = useNavigate();
 
     const handleUsernameChange = (e) => {
         setUsername(e.target.value);
@@ -21,12 +22,13 @@ const LoginForm = () => {
 
         try {
             const response = await fetch(
-                "http://localhost/pokedex-app/php/server.php",
+                "http://localhost/pokedex-app/php/login.php",
                 {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded",
                     },
+                    credentials: "include",
                     body: new URLSearchParams({
                         username,
                         password,
@@ -36,7 +38,6 @@ const LoginForm = () => {
 
             if (response.ok) {
                 const data = await response.json();
-                setSessionData(data.session);
                 Swal.fire({
                     title: "Autenticación exitosa",
                     text: data.message,
@@ -44,6 +45,7 @@ const LoginForm = () => {
                     showConfirmButton: false,
                     timer: 1500,
                 });
+                navigate("/");
             } else {
                 const data = await response.json();
                 Swal.fire({
