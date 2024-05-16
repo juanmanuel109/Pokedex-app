@@ -1,10 +1,12 @@
 import styles from "./LoginForm.module.css";
+
 import { useState } from "react";
 import Swal from "sweetalert2";
 
 const LoginForm = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [sessionData, setSessionData] = useState(null);
 
     const handleUsernameChange = (e) => {
         setUsername(e.target.value);
@@ -34,7 +36,7 @@ const LoginForm = () => {
 
             if (response.ok) {
                 const data = await response.json();
-                console.log(data);
+                setSessionData(data.session);
                 Swal.fire({
                     title: "Autenticación exitosa",
                     text: data.message,
@@ -97,9 +99,15 @@ const LoginForm = () => {
                         </div>
                     </div>
                     <button type="submit">Enviar</button>
+                    {sessionData && (
+                        <div>
+                            <p>Usuario: {sessionData.username}</p>
+                        </div>
+                    )}
                 </form>
             </div>
         </div>
     );
 };
+
 export default LoginForm;

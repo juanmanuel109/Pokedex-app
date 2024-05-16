@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 header('Access-Control-Allow-Origin: http://localhost:3000');
 header('Content-Type: application/json');
 
@@ -26,8 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
         if ($pass === $row['password']) {
-            $_SESSION['username'] = $user;
-            $response = ['message' => 'Autenticación exitosa'];
+            $_SESSION['username'] = $row['username'];
+            $response = ['message' => 'Autenticación exitosa', 'session' => $_SESSION];
             http_response_code(200);
             echo json_encode($response);
         } else {
@@ -41,6 +43,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo json_encode($response);
     }
 }
-
 
 mysqli_close($conn);
