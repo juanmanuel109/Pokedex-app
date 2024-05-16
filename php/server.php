@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $row = mysqli_fetch_assoc($result);
         if ($pass === $row['password']) {
             $_SESSION['username'] = $row['username'];
+            $_SESSION['auth'] = true;
             $response = ['message' => 'Autenticación exitosa', 'session' => $_SESSION];
             http_response_code(200);
             echo json_encode($response);

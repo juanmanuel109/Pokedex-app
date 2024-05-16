@@ -99,11 +99,6 @@ const LoginForm = () => {
                         </div>
                     </div>
                     <button type="submit">Enviar</button>
-                    {sessionData && (
-                        <div>
-                            <p>Usuario: {sessionData.username}</p>
-                        </div>
-                    )}
                 </form>
             </div>
         </div>
