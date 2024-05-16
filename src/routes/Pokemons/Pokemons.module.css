@@ -18,6 +18,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 64px;
-    font-weight: bold;
+}
+
+.tableContainer {
+    width: 98%;
+    height: 98%;
+}
+
+.tableContainer h2 {
+    margin: 20px 0 0 20px;
+    color: var(--main-color);
+}
+
+.titleAndButtonContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
