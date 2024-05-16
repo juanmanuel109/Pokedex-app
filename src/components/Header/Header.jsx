@@ -60,8 +60,12 @@ const Header = () => {
                 </div>
             </div>
             <div className={styles.navbar}>
-                <Link to="/">Inicio</Link>
-                <Link onClick={handleLogout}>Salir</Link>
+                <Link className={styles.linkElements} to="/">
+                    Inicio
+                </Link>
+                <Link className={styles.linkElements} onClick={handleLogout}>
+                    Salir
+                </Link>
             </div>
         </div>
     );
