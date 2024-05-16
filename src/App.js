@@ -20,7 +20,7 @@ function App() {
                     }
                 />
                 <Route
-                    path="/pokemones"
+                    path="/pokemons"
                     element={
                         <ProtectedRoute>
                             <Pokemons />

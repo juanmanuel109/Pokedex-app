@@ -1,10 +1,12 @@
+import Header from "../../components/Header/Header";
 import styles from "./Pokemons.module.css";
 
 const Pokemons = () => {
     return (
-        <>
-            <p>pokemons</p>
-        </>
+        <div className={styles.pokemonsContainer}>
+            <Header />
+            <div className={styles.container}></div>
+        </div>
     );
 };
 
