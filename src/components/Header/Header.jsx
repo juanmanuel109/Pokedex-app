@@ -63,6 +63,9 @@ const Header = () => {
                 <Link className={styles.linkElements} to="/">
                     Inicio
                 </Link>
+                <Link className={styles.linkElements} to="/pokemons">
+                    Pokemones
+                </Link>
                 <Link className={styles.linkElements} onClick={handleLogout}>
                     Salir
                 </Link>

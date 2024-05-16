@@ -3,6 +3,7 @@ import "./App.css";
 import Login from "./routes/Login/Login";
 import Home from "./routes/Home/Home";
 import ProtectedRoute from "./context/ProtectedRoute";
+import Pokemons from "./routes/Pokemons/Pokemons";
 
 function App() {
     return (
@@ -15,6 +16,14 @@ function App() {
                     element={
                         <ProtectedRoute>
                             <Home />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/pokemones"
+                    element={
+                        <ProtectedRoute>
+                            <Pokemons />
                         </ProtectedRoute>
                     }
                 />
