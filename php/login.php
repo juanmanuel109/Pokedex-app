@@ -8,12 +8,7 @@ header('Access-Control-Allow-Origin: http://localhost:3000');
 header('Access-Control-Allow-Credentials: true');
 header('Content-Type: application/json');
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "users";
-
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+require './dbConnection.php';
 
 if (!$conn) {
     $response = ['error' => 'Connection failed: ' . mysqli_connect_error()];
