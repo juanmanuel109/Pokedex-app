@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./NewPokemonForm.module.css";
+import Swal from "sweetalert2";
 import { useNavigate } from "react-router";
 
 const NewPokemonForm = ({ formTitle, setOpen }) => {
@@ -15,7 +16,7 @@ const NewPokemonForm = ({ formTitle, setOpen }) => {
 
     const navigate = useNavigate();
 
-    const handleNotFocused = (e) => {
+    const handleNotFocused = () => {
         setNotFocused(true); // Set not focused to true when input is not in focus
     };
 
@@ -26,9 +27,55 @@ const NewPokemonForm = ({ formTitle, setOpen }) => {
          */
         setValues({ ...values, [e.target.name]: e.target.value });
     };
-    console.log(values);
+
     const handleSubmit = async (e) => {
-        e.preventDeefault();
+        e.preventDefault();
+        setOpen(false);
+
+        try {
+            const response = await fetch(
+                "http://localhost/pokedex-app/php/createPokemon.php",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                    },
+                    body: new URLSearchParams(values).toString(),
+                    credentials: "include",
+                }
+            );
+            const result = await response.json();
+
+            if (response.ok) {
+                Swal.fire({
+                    title: result.success,
+                    icon: "success",
+                    showConfirmButton: false,
+                    timer: 1500,
+                }).then(() => {
+                    navigate(0);
+                });
+            } else {
+                Swal.fire({
+                    title: "Error",
+                    text: result.error,
+                    icon: "error",
+                    confirmButtonText: "OK",
+                    confirmButtonColor: "gray",
+                }).then(() => {
+                    navigate(0);
+                });
+            }
+        } catch (error) {
+            Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "Error en la solicitud",
+                confirmButtonColor: "gray",
+            }).then(() => {
+                navigate(0);
+            });
+        }
     };
 
     return (
