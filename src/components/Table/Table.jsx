@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import Swal from "sweetalert2";
+import ActionButtons from "../ActionButtons/ActionButtons";
 
 export default function Table(props) {
     const { tableBasicColumns } = props;
@@ -91,6 +92,23 @@ export default function Table(props) {
 
     const columns = [
         ...tableBasicColumns,
+        {
+            field: "features",
+            headerName: "Características",
+            flex: 1,
+            renderCell: (params) => {
+                // find the selected element in the array of rows by comparing id´s
+                const selectedElement = data.find(
+                    (element) => element.id === params.row.id
+                );
+                return (
+                    <ActionButtons
+                        selectedElement={selectedElement}
+                        handleDelete={() => handleDelete(selectedElement.id)}
+                    />
+                );
+            },
+        },
         {
             field: "actions",
             headerName: "Acciones",
