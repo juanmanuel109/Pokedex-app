@@ -59,7 +59,7 @@ if (mysqli_num_rows($result) > 0) {
     http_response_code(200);
     echo json_encode($data);
 } else {
-    $response = ['error' => 'No data found for the given Pokemon ID'];
+    $response = ['error' => 'No fueron encontrados datos para el pokemon consultado'];
     http_response_code(404); // Establecer código de respuesta 404 (No encontrado)
     echo json_encode($response);
 }
