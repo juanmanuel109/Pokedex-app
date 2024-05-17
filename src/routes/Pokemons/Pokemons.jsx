@@ -4,6 +4,7 @@ import Table from "../../components/Table/Table";
 import { pokemonTableColumns } from "../../utils/pokemonsTableBasicColumns";
 import ActionButtonCreateAndModal from "../../components/ActionButtons/ActionButtonCreateAndModal";
 import CatchingPokemonIcon from "@mui/icons-material/CatchingPokemon";
+import NewPokemonForm from "../../components/Forms/NewPokemonForm/NewPokemonForm";
 
 const Pokemons = () => {
     return (
@@ -17,7 +18,7 @@ const Pokemons = () => {
                             IconForButton={<CatchingPokemonIcon />}
                             textForButton={"Nuevo pokemón"}
                             formTitle={"Crear nuevo pokemón"}
-                            ModalContent={Header}
+                            ModalContent={NewPokemonForm}
                         />
                     </div>
                     <Table tableBasicColumns={pokemonTableColumns} />

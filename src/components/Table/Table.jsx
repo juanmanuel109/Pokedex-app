@@ -55,7 +55,60 @@ export default function Table(props) {
         fetchPokemonData();
     }, []);
 
-    const columns = [...tableBasicColumns];
+    const handleDelete = async (id) => {
+        Swal.fire({
+            icon: "warning",
+            title: "¿Estás seguro?",
+            text: "¡No podrás revertir esto!",
+            showCancelButton: true,
+            confirmButtonText: "Sí, eliminarlo",
+            cancelButtonText: "No, cancelar",
+            confirmButtonColor: "#0A8B5E",
+            cancelButtonColor: "#DE3C14",
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                try {
+                    console.log("prueba");
+                    setData(data.filter((item) => item.id !== id));
+
+                    Swal.fire({
+                        icon: "success",
+                        title: "¡Elemento eliminado!",
+                        showConfirmButton: false,
+                        timer: 1500,
+                    });
+                } catch (error) {
+                    console.log(error);
+                    Swal.fire({
+                        icon: "error",
+                        title: "Error",
+                        text: "Ha ocurrido un error al intentar eliminar el elemento.",
+                    });
+                }
+            }
+        });
+    };
+
+    const columns = [
+        ...tableBasicColumns,
+        {
+            field: "actions",
+            headerName: "Acciones",
+            flex: 1,
+            renderCell: (params) => {
+                // find the selected element in the array of rows by comparing id´s
+                const selectedElement = data.find(
+                    (element) => element.id === params.row.id
+                );
+                return (
+                    <ActionButtons
+                        selectedElement={selectedElement}
+                        handleDelete={() => handleDelete(selectedElement.id)}
+                    />
+                );
+            },
+        },
+    ];
 
     return (
         <div
