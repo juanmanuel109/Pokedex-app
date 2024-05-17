@@ -70,15 +70,33 @@ export default function Table(props) {
         }).then(async (result) => {
             if (result.isConfirmed) {
                 try {
-                    console.log("prueba");
-                    setData(data.filter((item) => item.id !== id));
+                    const response = await fetch(
+                        `http://localhost/pokedex-app/php/deletePokemon.php?id=${id}`,
+                        {
+                            method: "GET",
+                            credentials: "include",
+                        }
+                    );
+                    const result = await response.json();
 
-                    Swal.fire({
-                        icon: "success",
-                        title: "¡Elemento eliminado!",
-                        showConfirmButton: false,
-                        timer: 1500,
-                    });
+                    if (response.ok) {
+                        setData(data.filter((item) => item.id !== id));
+
+                        Swal.fire({
+                            icon: "success",
+                            title: result.success,
+                            showConfirmButton: false,
+                            timer: 1500,
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Error",
+                            text: result.error,
+                            confirmButtonText: "OK",
+                            confirmButtonColor: "gray",
+                        });
+                    }
                 } catch (error) {
                     console.log(error);
                     Swal.fire({
