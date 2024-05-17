@@ -22,11 +22,11 @@
 
 .tableContainer {
     width: 98%;
-    height: 98%;
+    height: 90%;
 }
 
 .tableContainer h2 {
-    margin: 20px 0 0 20px;
+    margin: 0 0 0 20px;
     color: var(--main-color);
 }
 

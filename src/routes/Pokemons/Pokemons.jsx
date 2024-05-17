@@ -2,6 +2,8 @@ import Header from "../../components/Header/Header";
 import styles from "./Pokemons.module.css";
 import Table from "../../components/Table/Table";
 import { pokemonTableColumns } from "../../utils/pokemonsTableBasicColumns";
+import ActionButtonCreateAndModal from "../../components/ActionButtons/ActionButtonCreateAndModal";
+import CatchingPokemonIcon from "@mui/icons-material/CatchingPokemon";
 
 const Pokemons = () => {
     return (
@@ -11,7 +13,12 @@ const Pokemons = () => {
                 <div className={styles.tableContainer}>
                     <div className={styles.titleAndButtonContainer}>
                         <h2>Tabla de pokemones</h2>
-                        <button className={styles.button}>Agregar</button>
+                        <ActionButtonCreateAndModal
+                            IconForButton={<CatchingPokemonIcon />}
+                            textForButton={"Nuevo pokemón"}
+                            formTitle={"Crear nuevo pokemón"}
+                            ModalContent={Header}
+                        />
                     </div>
                     <Table tableBasicColumns={pokemonTableColumns} />
                 </div>
