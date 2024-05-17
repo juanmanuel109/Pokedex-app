@@ -69,10 +69,10 @@ export default function Table(props) {
                 columns={columns}
                 initialState={{
                     pagination: {
-                        paginationModel: { page: 0, pageSize: 5 },
+                        paginationModel: { page: 0, pageSize: 8 },
                     },
                 }}
-                pageSizeOptions={[5]}
+                pageSizeOptions={[8]}
             />
         </div>
     );
