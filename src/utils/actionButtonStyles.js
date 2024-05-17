@@ -1,12 +1,4 @@
 export const buttonStyles = {
-    read: {
-        background: "none",
-        color: "#08A6C1",
-        cursor: "pointer",
-        borderRadius: "50%",
-        padding: "10px",
-        textAlign: "center",
-    },
     update: {
         background: "none",
         color: "#FF9C26",

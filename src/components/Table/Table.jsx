@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import Swal from "sweetalert2";
 import ActionButtons from "../ActionButtons/ActionButtons";
+import FeatureButtons from "../FeatureButtons/FeatureButtons";
 
 export default function Table(props) {
     const { tableBasicColumns } = props;
@@ -101,12 +102,7 @@ export default function Table(props) {
                 const selectedElement = data.find(
                     (element) => element.id === params.row.id
                 );
-                return (
-                    <ActionButtons
-                        selectedElement={selectedElement}
-                        handleDelete={() => handleDelete(selectedElement.id)}
-                    />
-                );
+                return <FeatureButtons selectedElement={selectedElement} />;
             },
         },
         {

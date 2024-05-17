@@ -1,6 +1,6 @@
 import styles from "./TypesCard.module.css";
 
-const TypesCard = () => {
+const TypesCard = (props) => {
     return (
         <>
             <p>types card</p>
