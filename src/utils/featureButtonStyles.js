@@ -2,7 +2,7 @@ export const buttonStyles = {
     stats: {
         background: "none",
         color: "white",
-        marginLeft: "10px",
+        marginLeft: "5px",
         padding: "5px",
         cursor: "pointer",
         border: "0.1px solid #6894cc",
@@ -14,7 +14,7 @@ export const buttonStyles = {
     types: {
         background: "none",
         color: "white",
-        marginLeft: "10px",
+        marginLeft: "20px",
         padding: "5px",
         cursor: "pointer",
         border: "0.1px solid #6894cc",

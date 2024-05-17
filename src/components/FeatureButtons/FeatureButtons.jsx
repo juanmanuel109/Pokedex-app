@@ -1,8 +1,6 @@
-import styles from "./FeatureButtons.module.css";
 import FeatureButton from "./FeatureButton";
 import StatsCard from "../Cards/StatsCard/StatsCard";
 import TypesCard from "../Cards/TypesCard/TypesCard";
-import * as React from "react";
 
 const FeatureButtons = ({ selectedElement }) => {
     return (
@@ -10,12 +8,12 @@ const FeatureButtons = ({ selectedElement }) => {
             <FeatureButton
                 buttonType={"stats"}
                 selectedElement={selectedElement}
-                ModalContent={StatsCard} //Replace with the name of the specific action component (form...)
+                ModalContent={StatsCard} //Replace with the name of the specific feature component (card...)
             />
             <FeatureButton
                 buttonType={"types"}
                 selectedElement={selectedElement}
-                ModalContent={TypesCard} //Replace with the name of the specific action component (form...)
+                ModalContent={TypesCard} //Replace with the name of the specific feature component (card...)
             />
         </>
     );

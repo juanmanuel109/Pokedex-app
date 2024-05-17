@@ -1,9 +1,9 @@
 import styles from "./TypesCard.module.css";
 
-const TypesCard = (props) => {
+const TypesCard = ({ selectedElement }) => {
     return (
         <>
-            <p>types card</p>
+            <h2>{selectedElement.pok_name}</h2>
         </>
     );
 };
