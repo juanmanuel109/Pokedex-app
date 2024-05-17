@@ -4,6 +4,7 @@ import styles from "./TypesCard.module.css";
 
 const TypesCard = ({ setOpen, selectedElement }) => {
     const [types, setTypes] = useState(null);
+    const [sprite, setSprite] = useState(null);
 
     useEffect(() => {
         const fetchPokemonTypes = async () => {
@@ -18,7 +19,7 @@ const TypesCard = ({ setOpen, selectedElement }) => {
                 const data = await response.json();
 
                 if (response.ok) {
-                    setTypes(data.types);
+                    setTypes(data);
                 } else {
                     setOpen(false);
                     await Swal.fire({
@@ -40,19 +41,59 @@ const TypesCard = ({ setOpen, selectedElement }) => {
             }
         };
 
+        const fetchPokeAPISprite = async () => {
+            try {
+                const response = await fetch(
+                    `https://pokeapi.co/api/v2/pokemon/${selectedElement.pok_name}`
+                );
+                const data = await response.json();
+
+                if (response.ok) {
+                    setSprite(
+                        data.sprites.other["official-artwork"].front_default
+                    );
+                } else {
+                    console.error("Error fetching sprite:", data);
+                }
+            } catch (error) {
+                console.error("Error fetching sprite:", error);
+            }
+        };
+
         fetchPokemonTypes();
+        fetchPokeAPISprite();
     }, [selectedElement]);
 
     return (
         <div className={styles.typesCard}>
             {types ? (
                 <>
-                    <h2>Tipos de {selectedElement.pok_name}</h2>
-                    <ul>
-                        {types.map((type, index) => (
-                            <li key={index}>{type}</li>
-                        ))}
-                    </ul>
+                    <div className={styles.pokemonName}>
+                        <h2>
+                            {selectedElement.pok_name} #{selectedElement.pok_id}
+                        </h2>
+                        <img src={sprite} alt="Sin imagen" />
+                    </div>
+                    <div className={styles.pokemonStats}>
+                        <div className="statContainer">
+                            <label>Altura</label>
+                            <p> {types.pok_height} [dm]</p>
+                        </div>
+                        <div className="statContainer">
+                            <label>Peso</label>
+                            <p> {types.pok_weight} [hg]</p>
+                        </div>
+                        <div className="statContainer">
+                            <label>Puntos de experiencia base</label>
+                            <p> {types.pok_base_experience}</p>
+                        </div>
+                        <div className="statContainer">
+                            <label>Tipos</label>
+                            {types.types.map((type, index) => (
+                                <p key={index}>{type}</p>
+                            ))}
+                        </div>
+                    </div>
                 </>
             ) : (
                 <p>Espere por favor</p>

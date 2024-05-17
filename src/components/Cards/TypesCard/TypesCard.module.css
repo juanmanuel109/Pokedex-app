@@ -1,0 +1,38 @@
+.typesCard {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.pokemonName {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pokemonName img {
+    width: 100%;
+    background-color: var(--body-color);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.pokemonName h2 {
+    text-transform: uppercase;
+    font-size: 32px;
+    margin: 20px;
+    text-align: center;
+}
+
+.pokemonStats {
+    margin-left: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 48px;
+}
+
+.pokemonStats p {
+    font-weight: bold;
+    font-size: 24px;
+    margin: 5px 0;
+}
