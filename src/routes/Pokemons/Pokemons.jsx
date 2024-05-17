@@ -16,8 +16,8 @@ const Pokemons = () => {
                         <h2>Tabla de pokemones</h2>
                         <ActionButtonCreateAndModal
                             IconForButton={<CatchingPokemonIcon />}
-                            textForButton={"Nuevo pokemón"}
-                            formTitle={"Crear nuevo pokemón"}
+                            textForButton={"Nuevo Pokémon"}
+                            formTitle={"Ingresar un nuevo Pokémon"}
                             ModalContent={NewPokemonForm}
                         />
                     </div>
