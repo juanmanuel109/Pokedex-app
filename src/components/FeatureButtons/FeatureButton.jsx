@@ -2,7 +2,7 @@ import { buttonStyles } from "../../utils/featureButtonStyles";
 import { useState } from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
-import { statsFeatureModal, typesFeatureModal } from "../../utils/modalStyles";
+import { featureModalStyle } from "../../utils/modalStyles";
 
 const FeatureButton = (props) => {
     const { buttonType, ModalContent, selectedElement } = props;
@@ -23,13 +23,7 @@ const FeatureButton = (props) => {
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
-                <Box
-                    sx={
-                        buttonType === "stats"
-                            ? statsFeatureModal
-                            : typesFeatureModal
-                    }
-                >
+                <Box sx={featureModalStyle}>
                     <ModalContent
                         selectedElement={selectedElement}
                         setOpen={setOpen}
