@@ -10,7 +10,7 @@ const ActionButtons = (props) => {
         <>
             <ActionButton
                 buttonType={"update"}
-                updateFormTitle={"Actualizar pokemón"}
+                updateFormTitle={"Actualizar Pokémon"}
                 selectedElement={selectedElement}
                 IconComponent={<ModeEditIcon />}
                 ModalContent={UpdatePokemonForm} //Replace with the name of the specific action component (form...)
