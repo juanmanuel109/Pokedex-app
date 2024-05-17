@@ -54,14 +54,32 @@ const StatsCard = ({ selectedElement }) => {
                             alt="Sin imagen"
                         />
                     </div>
-                    <p>Altura: {stats.pok_height} [dm]</p>
-                    <p>Peso: {stats.pok_weight} [hg]</p>
-                    <p>
-                        Puntos de experiencia base: {stats.pok_base_experience}
-                    </p>
-                    <p>Puntos de vida: {stats.b_hp}</p>
-                    <p>Puntos de ataque: {stats.b_atk}</p>
-                    <p>Puntos de defensa: {stats.b_def}</p>
+                    <div className={styles.pokemonStats}>
+                        <div className="statContainer">
+                            <label>Altura</label>
+                            <p> {stats.pok_height} [dm]</p>
+                        </div>
+                        <div className="statContainer">
+                            <label>Peso</label>
+                            <p> {stats.pok_weight} [hg]</p>
+                        </div>
+                        <div className="statContainer">
+                            <label>Puntos de experiencia base</label>
+                            <p> {stats.pok_base_experience}</p>
+                        </div>
+                        <div className="statContainer">
+                            <label>Puntos de vida</label>
+                            <p> {stats.b_hp}</p>
+                        </div>
+                        <div className="statContainer">
+                            <label>Puntos de ataque</label>
+                            <p> {stats.b_atk}</p>
+                        </div>
+                        <div className="statContainer">
+                            <label>Puntos de defensa</label>
+                            <p> {stats.b_def}</p>
+                        </div>
+                    </div>
                 </>
             ) : (
                 <p>Loading...</p>
