@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import styles from "./StatsCard.module.css";
 
-const StatsCard = ({ selectedElement }) => {
+const StatsCard = ({ setOpen, selectedElement }) => {
     const [stats, setStats] = useState(null);
+    const [sprite, setSprite] = useState(null);
 
     useEffect(() => {
         const fetchPokemonStats = async () => {
@@ -20,6 +21,7 @@ const StatsCard = ({ selectedElement }) => {
                 if (response.ok) {
                     setStats(statsData);
                 } else {
+                    setOpen(false);
                     await Swal.fire({
                         title: "Error",
                         text: statsData.error,
@@ -29,6 +31,7 @@ const StatsCard = ({ selectedElement }) => {
                     });
                 }
             } catch (error) {
+                setOpen(false);
                 await Swal.fire({
                     icon: "error",
                     title: "Error",
@@ -38,7 +41,27 @@ const StatsCard = ({ selectedElement }) => {
             }
         };
 
+        const fetchPokeAPISprite = async () => {
+            try {
+                const response = await fetch(
+                    `https://pokeapi.co/api/v2/pokemon/${selectedElement.pok_name}`
+                );
+                const data = await response.json();
+
+                if (response.ok) {
+                    setSprite(
+                        data.sprites.other["official-artwork"].front_default
+                    );
+                } else {
+                    console.error("Error fetching sprite:", data);
+                }
+            } catch (error) {
+                console.error("Error fetching sprite:", error);
+            }
+        };
+
         fetchPokemonStats();
+        fetchPokeAPISprite();
     }, [selectedElement]);
 
     return (
@@ -49,10 +72,7 @@ const StatsCard = ({ selectedElement }) => {
                         <h2>
                             {selectedElement.pok_name} #{selectedElement.pok_id}
                         </h2>
-                        <img
-                            src="https://i.pinimg.com/originals/ed/d7/2b/edd72be48d41170cc2ee61a6c8f46657.png"
-                            alt="Sin imagen"
-                        />
+                        <img src={sprite} alt="Sin imagen" />
                     </div>
                     <div className={styles.pokemonStats}>
                         <div className="statContainer">
@@ -82,7 +102,7 @@ const StatsCard = ({ selectedElement }) => {
                     </div>
                 </>
             ) : (
-                <p>Loading...</p>
+                <p>Espere por favor</p>
             )}
         </div>
     );

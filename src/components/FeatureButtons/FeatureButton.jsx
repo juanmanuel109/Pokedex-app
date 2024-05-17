@@ -24,7 +24,10 @@ const FeatureButton = (props) => {
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={modalStyle}>
-                    <ModalContent selectedElement={selectedElement} />
+                    <ModalContent
+                        selectedElement={selectedElement}
+                        setOpen={setOpen}
+                    />
                 </Box>
             </Modal>
         </>
