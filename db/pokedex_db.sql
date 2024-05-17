@@ -353,9 +353,7 @@ INSERT INTO `types` (`type_id`, `type_name`, `damage_type_id`) VALUES
 (15, 'ice', 15),
 (16, 'dragon', 16),
 (17, 'dark', 17),
-(18, 'fairy', 18),
-(10001, 'unknown', 1),
-(10002, 'shadow', 2);
+(18, 'fairy', 18);
 
 -- --------------------------------------------------------
 
@@ -789,13 +787,13 @@ ALTER TABLE `type_efficacy`
 -- AUTO_INCREMENT for table `pokemon`
 --
 ALTER TABLE `pokemon`
-  MODIFY `pok_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=724;
+  MODIFY `pok_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `types`
 --
 ALTER TABLE `types`
-  MODIFY `type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10003;
+  MODIFY `type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Constraints for dumped tables
