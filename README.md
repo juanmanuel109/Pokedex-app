@@ -10,6 +10,10 @@
     <a href="https://www.php.net/manual/es/intro-whatis.php"><img alt="php version" src="https://img.shields.io/badge/php-v8.1-7377AD"></a>
 </p>
 
+## © Repositorio de la base de datos utilizada
+[Pokemon-Database](https://github.com/brianr852/Pokemon-Database)
+
+
 ## 📖 Instrucciones de uso
 Para replicar este proyecto, debe realizar los siguientes pasos:
 
