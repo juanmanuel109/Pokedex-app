@@ -22,7 +22,7 @@ export default function Table(props) {
 
                 if (response.ok) {
                     Swal.fire({
-                        title: "Consulta exitosa",
+                        title: "Tabla de pokemones actualizada",
                         icon: "success",
                         showConfirmButton: false,
                         timer: 1500,
@@ -116,7 +116,6 @@ export default function Table(props) {
             headerName: "Características",
             flex: 1,
             renderCell: (params) => {
-                // find the selected element in the array of rows by comparing id´s
                 const selectedElement = data.find(
                     (element) => element.id === params.row.id
                 );
@@ -128,7 +127,6 @@ export default function Table(props) {
             headerName: "Acciones",
             flex: 1,
             renderCell: (params) => {
-                // find the selected element in the array of rows by comparing id´s
                 const selectedElement = data.find(
                     (element) => element.id === params.row.id
                 );
