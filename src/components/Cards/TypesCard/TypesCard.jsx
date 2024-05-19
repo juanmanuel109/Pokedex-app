@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import styles from "./TypesCard.module.css";
+import { getColorByType } from "../../../utils/getColorByType";
 
 const TypesCard = ({ setOpen, selectedElement }) => {
     const [types, setTypes] = useState(null);
@@ -90,7 +91,20 @@ const TypesCard = ({ setOpen, selectedElement }) => {
                         <div className="statContainer">
                             <label>Tipos</label>
                             {types.types.map((type, index) => (
-                                <p key={index}>{type}</p>
+                                <p
+                                    key={index}
+                                    style={{
+                                        backgroundColor: getColorByType(type),
+                                        color: "white",
+                                        display: "flex",
+                                        justifyContent: "center",
+                                        padding: 10,
+                                        borderRadius: 10,
+                                        width: 80,
+                                    }}
+                                >
+                                    {type}
+                                </p>
                             ))}
                         </div>
                     </div>
