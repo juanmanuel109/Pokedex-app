@@ -99,7 +99,7 @@ const TypesCard = ({ setOpen, selectedElement }) => {
                                         display: "flex",
                                         justifyContent: "center",
                                         padding: 10,
-                                        borderRadius: 10,
+                                        borderRadius: 20,
                                         width: 80,
                                     }}
                                 >
