@@ -17,7 +17,7 @@ export const featureModalStyle = {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: "80%",
+    width: "65%",
     bgcolor: "background.paper",
     p: 4,
     padding: "20px 60px",
