@@ -31,8 +31,16 @@
     grid-gap: 48px;
 }
 
+.pokemonStats label {
+    color: #6b6b6b;
+}
+
 .pokemonStats p {
     font-weight: bold;
     font-size: 24px;
     margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #e5e5e5;
+    border-radius: 20px;
+    text-align: center;
 }

@@ -77,11 +77,11 @@ const StatsCard = ({ setOpen, selectedElement }) => {
                     <div className={styles.pokemonStats}>
                         <div className="statContainer">
                             <label>Altura</label>
-                            <p> {stats.pok_height} [dm]</p>
+                            <p> {stats.pok_height} dm</p>
                         </div>
                         <div className="statContainer">
                             <label>Peso</label>
-                            <p> {stats.pok_weight} [hg]</p>
+                            <p> {stats.pok_weight} hg</p>
                         </div>
                         <div className="statContainer">
                             <label>Puntos de experiencia base</label>

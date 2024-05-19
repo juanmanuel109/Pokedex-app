@@ -78,11 +78,11 @@ const TypesCard = ({ setOpen, selectedElement }) => {
                     <div className={styles.pokemonStats}>
                         <div className="statContainer">
                             <label>Altura</label>
-                            <p> {types.pok_height} [dm]</p>
+                            <p> {types.pok_height} dm</p>
                         </div>
                         <div className="statContainer">
                             <label>Peso</label>
-                            <p> {types.pok_weight} [hg]</p>
+                            <p> {types.pok_weight} hg</p>
                         </div>
                         <div className="statContainer">
                             <label>Puntos de experiencia base</label>
@@ -91,11 +91,14 @@ const TypesCard = ({ setOpen, selectedElement }) => {
                         <div className="statContainer">
                             <label>Tipos</label>
                             {types.types.map((type, index) => (
-                                <p
+                                <div
                                     key={index}
                                     style={{
                                         backgroundColor: getColorByType(type),
                                         color: "white",
+                                        fontSize: 24,
+                                        fontWeight: "bold",
+                                        margin: "5px 0",
                                         display: "flex",
                                         justifyContent: "center",
                                         padding: 10,
@@ -104,7 +107,7 @@ const TypesCard = ({ setOpen, selectedElement }) => {
                                     }}
                                 >
                                     {type}
-                                </p>
+                                </div>
                             ))}
                         </div>
                     </div>
