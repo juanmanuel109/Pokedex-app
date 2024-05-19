@@ -2,6 +2,9 @@ import React from "react";
 import styles from "./Header.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import HomeIcon from "@mui/icons-material/Home";
+import LogoutIcon from "@mui/icons-material/Logout";
+import CatchingPokemonIcon from "@mui/icons-material/CatchingPokemon";
 
 const Header = () => {
     const navigate = useNavigate();
@@ -60,12 +63,15 @@ const Header = () => {
                 </div>
             </div>
             <div className={styles.navbar}>
+                <HomeIcon sx={{ fontSize: 25 }} />
                 <Link className={styles.linkElements} to="/">
                     Inicio
                 </Link>
+                <CatchingPokemonIcon sx={{ fontSize: 25 }} />
                 <Link className={styles.linkElements} to="/pokemons">
                     Pokemones
                 </Link>
+                <LogoutIcon sx={{ fontSize: 25 }} />
                 <Link className={styles.linkElements} onClick={handleLogout}>
                     Salir
                 </Link>

@@ -55,11 +55,14 @@
 .navbar {
     margin: 0;
     padding: 0;
+    display: flex;
+    align-items: center;
 }
 
 .linkElements {
     text-decoration: none;
     color: white;
-    font-size: 24px;
+    font-size: 20px;
     padding-right: 48px;
+    text-transform: uppercase;
 }
