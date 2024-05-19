@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import styles from "./StatsCard.module.css";
+import { modifyNumberByID } from "../../../utils/modifyNumberByID";
 
 const StatsCard = ({ setOpen, selectedElement }) => {
     const [stats, setStats] = useState(null);
@@ -70,7 +71,8 @@ const StatsCard = ({ setOpen, selectedElement }) => {
                 <>
                     <div className={styles.pokemonName}>
                         <h2>
-                            {selectedElement.pok_name} #{selectedElement.pok_id}
+                            {selectedElement.pok_name} N°
+                            {modifyNumberByID(selectedElement.pok_id)}
                         </h2>
                         <img src={sprite} alt="Sin imagen" />
                     </div>
