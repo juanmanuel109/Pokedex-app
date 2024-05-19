@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import styles from "./TypesCard.module.css";
 import { getColorByType } from "../../../utils/getColorByType";
+import { modifyNumberByID } from "../../../utils/modifyNumberByID";
 
 const TypesCard = ({ setOpen, selectedElement }) => {
     const [types, setTypes] = useState(null);
@@ -71,7 +72,8 @@ const TypesCard = ({ setOpen, selectedElement }) => {
                 <>
                     <div className={styles.pokemonName}>
                         <h2>
-                            {selectedElement.pok_name} #{selectedElement.pok_id}
+                            {selectedElement.pok_name} N°
+                            {modifyNumberByID(selectedElement.pok_id)}
                         </h2>
                         <img src={sprite} alt="Sin imagen" />
                     </div>
@@ -90,25 +92,34 @@ const TypesCard = ({ setOpen, selectedElement }) => {
                         </div>
                         <div className="statContainer">
                             <label>Tipos</label>
-                            {types.types.map((type, index) => (
-                                <div
-                                    key={index}
-                                    style={{
-                                        backgroundColor: getColorByType(type),
-                                        color: "white",
-                                        fontSize: 24,
-                                        fontWeight: "bold",
-                                        margin: "5px 0",
-                                        display: "flex",
-                                        justifyContent: "center",
-                                        padding: 10,
-                                        borderRadius: 20,
-                                        width: 80,
-                                    }}
-                                >
-                                    {type}
-                                </div>
-                            ))}
+                            <div
+                                style={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                    alignItems: "center",
+                                }}
+                            >
+                                {types.types.map((type, index) => (
+                                    <div
+                                        key={index}
+                                        style={{
+                                            backgroundColor:
+                                                getColorByType(type),
+                                            color: "white",
+                                            fontSize: 24,
+                                            fontWeight: "bold",
+                                            margin: "5px",
+                                            display: "flex",
+                                            justifyContent: "center",
+                                            padding: 10,
+                                            borderRadius: 20,
+                                            width: 80,
+                                        }}
+                                    >
+                                        {type}
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </>
