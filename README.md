@@ -1,91 +1,42 @@
-<a name="readme-top"></a>
+# Pokedex-app
+Este proyecto fue desarrollado en equipo, como requerimiento para la asignatura de Desarrollo de Aplicaciones Web. 
 
 # 🖥 Proyecto Pokédex web app
 
-<p align="center">
-    <a href="https://nodejs.org/en/download"><img alt="npm version" src="https://img.shields.io/badge/npm-v10.5.0-green"></a>
-    <a href="https://react.dev/"><img alt="react version" src="https://img.shields.io/badge/react-v18.2.0-blue"></a> 
-    <a href="https://www.apachefriends.org/es/download.html"><img alt="xampp version" src="https://img.shields.io/badge/xampp-v8.1.25-FA7923"></a> 
-    <a href="https://www.mysql.com/"><img alt="php version" src="https://img.shields.io/badge/RDBMS-MySQL-F29111"></a>
-    <a href="https://www.php.net/manual/es/intro-whatis.php"><img alt="php version" src="https://img.shields.io/badge/php-v8.1-7377AD"></a>
-</p>
+## Versiones de herramientas
 
-## © Repositorio de la base de datos utilizada
+- npm version: ![npm](https://img.shields.io/badge/npm-10.5.0-red)
+- react version: ![React](https://img.shields.io/badge/React-18.2.0-61DAFB)
+- xampp version: ![XAMPP](https://img.shields.io/badge/XAMPP-8.1.25-FB7A24)
+- php version: ![PHP](https://img.shields.io/badge/PHP-8.1-777BB4)
+
+## Base de datos
+
+© Repositorio de la base de datos utilizada
+
 [Pokemon-Database](https://github.com/brianr852/Pokemon-Database)
-
-
-## 📖 Instrucciones de uso
-Para replicar este proyecto, debe realizar los siguientes pasos:
-
-### 1️⃣ Clonar el repositorio en la carpeta htdocs de XAMPP
-Debe asegurarse de estar dentro de la carpeta adecuada dependiendo de su sistema operativo:
-  - Para Windows: `cd C:\xampp\htdocs`
-  - Para S.O. basados en Unix: `cd /c/xampp/htdocs`
-
-Una vez que esté en la ubicación adecuada, en su consola de preferencia ejecute:
-
-```
-git clone http://github.com/jdcarvajalc/pokedex-app.git
-```
-
-No olvide dejar su estrella ⭐ a este repositorio por favor!
-
-### 2️⃣ Instalar dependencias
-Una vez clonado el repositorio satisfactoriamente, en su consola de preferencia ejecute:
-
-```
-npm install
-```
-
-### 3️⃣ Ejecutar el proyecto de forma local
-Una vez que haya terminado de instalar las dependencias , puede ejecutar el proyecto. En su consola de preferencia ejecute:
-
-```
-npm start
-```
-
-Este comando ejecuta la aplicación en modo de desarrollo.\
-Abra [http://localhost:3000](http://localhost:3000) para verla en su navegador de preferencia.
-
-### 4️⃣ Iniciar los servidores de base de datos y web
-Cuando ya tenga configurada la parte del FrontEnd, a través de XAMPP debe iniciar los servidores:
-  - MySQL
-  - Apache
-
-### 5️⃣ Importar las bases de datos en MySQL
-
-  Utilizando XAMPP, con ayuda de phpMyAdmin puede importar las bases de datos `pokedex_db` y `users` por medio de los archivos:
-  - [pokedex_db.sql](./db/pokedex_db.sql)
-  - [users.sql](./db/users.sql)
-
-<p align="right"><a href="#readme-top">⬆ Volver arriba ⬆</a></p>
-
-## 🎨 Referencia de colores
-
-| Color             | Hex                                                                |
-| ----------------- | ------------------------------------------------------------------ |
-| Color principal | ![#aa3030](https://via.placeholder.com/10/aa3030?text=+) #aa3030 |
-| Color de título | ![#d14444](https://via.placeholder.com/10/d14444?text=+) #d14444 |
-| Color de texto | ![#800e13](https://via.placeholder.com/10/800e13?text=+) #800e13 |
-| Color de texto claro | ![#ad2831](https://via.placeholder.com/10/ad2831?text=+) #ad2831 |
-| Color de borde | ![#757575](https://via.placeholder.com/10/757575?text=+) #757575 |
-| Color de contenedor | ![#fff](https://via.placeholder.com/10/fff?text=+) #fff |
-| Color de cuerpo | ![#f6f8fc](https://via.placeholder.com/10/f6f8fc?text=+) #f6f8fc |
-
-<p align="right"><a href="#readme-top">⬆ Volver arriba ⬆</a></p>
-
-##  🛠️  Stack
-
-- ![VSCode](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
+# 🛠️ Stack
+- ![VSCode](https://img.shields.io/badge/VSCode-0078d7?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 - ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
-- ![Javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+- ![Javascript](https://img.shields.io/badge/Javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 - ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 - ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-- ![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
-- ![XAMPP](https://img.shields.io/badge/Xampp-F37623?style=for-the-badge&logo=xampp&logoColor=white)
-- ![Node](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
-- ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-- ![React router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
-- ![MUI](https://img.shields.io/badge/Material%20UI-007FFF?style=for-the-badge&logo=mui&logoColor=white)
-
-<p align="right"><a href="#readme-top">⬆ Volver arriba ⬆</a></p>
+- ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+- ![XAMPP](https://img.shields.io/badge/XAMPP-FB7A24?style=for-the-badge&logo=xampp&logoColor=white)
+- ![Node](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+- ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+- ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+- ![MUI](https://img.shields.io/badge/MUI-007FFF?style=for-the-badge&logo=mui&logoColor=white)
+ 
+# 🖥 Pokédex web app
+<img width="1440" alt="Captura de pantalla 2024-05-30 a la(s) 9 59 07 p  m" src="https://github.com/juanmanuel109/Pokedex-app/assets/162065582/fe4be71c-1f7c-48d2-9721-49ffa5c9acbe">
+<img width="1440" alt="Captura de pantalla 2024-05-30 a la(s) 9 59 16 p  m" src="https://github.com/juanmanuel109/Pokedex-app/assets/162065582/84e7b93e-f973-4e91-8949-bacf1d1aeec2">
+<img width="1440" alt="Captura de pantalla 2024-05-30 a la(s) 9 59 26 p  m" src="https://github.com/juanmanuel109/Pokedex-app/assets/162065582/10460fd9-c476-4896-be43-901854b90f90">
+<img width="1440" alt="Captura de pantalla 2024-05-30 a la(s) 9 59 36 p  m" src="https://github.com/juanmanuel109/Pokedex-app/assets/162065582/213316c3-e43f-4534-80f3-7922db1e9c69">
+<img width="1440" alt="Captura de pantalla 2024-05-30 a la(s) 9 59 53 p  m" src="https://github.com/juanmanuel109/Pokedex-app/assets/162065582/7cfcd7c4-70d9-4314-bfdc-3c40be5aea7f">
+<img width="1440" alt="Captura de pantalla 2024-05-30 a la(s) 10 00 24 p  m" src="https://github.com/juanmanuel109/Pokedex-app/assets/162065582/ae8a5218-d20b-447a-a473-2f1d9ff69634">
+<img width="1440" alt="Captura de pantalla 2024-05-30 a la(s) 10 00 34 p  m" src="https://github.com/juanmanuel109/Pokedex-app/assets/162065582/3fb96b24-a9b5-4293-9bf3-c8bd53b6a0d3">
+<img width="1440" alt="Captura de pantalla 2024-05-30 a la(s) 10 00 41 p  m" src="https://github.com/juanmanuel109/Pokedex-app/assets/162065582/7f7e2b7c-cd28-4b91-b833-97b0c0169b3b">
+<img width="1440" alt="Captura de pantalla 2024-05-30 a la(s) 10 00 56 p  m" src="https://github.com/juanmanuel109/Pokedex-app/assets/162065582/1d55add2-d6df-4b55-ac1f-589e4bc3d867">
+<img width="1440" alt="Captura de pantalla 2024-05-30 a la(s) 10 01 09 p  m" src="https://github.com/juanmanuel109/Pokedex-app/assets/162065582/15103cd8-e09d-49b0-a4f9-9812438f0d71">
+<img width="1440" alt="Captura de pantalla 2024-05-30 a la(s) 10 01 20 p  m" src="https://github.com/juanmanuel109/Pokedex-app/assets/162065582/e153e44b-6915-459e-be29-77dae13d2f1d">
